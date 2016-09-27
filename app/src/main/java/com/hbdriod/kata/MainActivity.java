@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         final EditText editText = (EditText) findViewById(R.id.edit_text);
-        editText.setText("Tapez ici votre calcul");
 
         Button button = (Button) findViewById(R.id.button);
 
@@ -27,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String string = new String(editText.getText().toString());
-                textView.setText(calculator.add(string));
+                String string = editText.getText().toString();
+                textView.setText(""+calculator.add(string));
             }
         });
 

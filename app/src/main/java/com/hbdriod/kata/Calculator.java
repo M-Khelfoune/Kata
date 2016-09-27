@@ -8,24 +8,22 @@ import java.util.StringTokenizer;
 
 public class Calculator {
 
-    public int add(String numbers){
+    public int add(String numbers) {
         int sum = 0;
-        if (numbers.length()==0){
-            return 0;
+        StringTokenizer sl = new StringTokenizer(numbers, "\n");
+        while (sl.hasMoreElements()) {
+            numbers = sl.nextElement().toString();
+            if (!(numbers.length() == 0)) {
+                if (numbers.indexOf(',') < 0) {
+                    sum = Integer.valueOf(numbers);
+                } else {
+                    StringTokenizer st = new StringTokenizer(numbers, ",");
+                    while (st.hasMoreElements()) {
+                        sum += Integer.valueOf(st.nextElement().toString());
+                    }
+                }
+            }
         }
-        if (numbers.indexOf(',')<0){
-            sum = Integer.valueOf(numbers);
-            return sum;
-        }
-        StringTokenizer st = new StringTokenizer(numbers, ",");
-        if (st.countTokens()==2) {
-            sum = Integer.valueOf(st.nextElement().toString());
-            sum += Integer.valueOf(st.nextElement().toString());
-            return sum;
-        }
-        while (st.hasMoreElements()) {
-          sum += Integer.valueOf(st.nextElement().toString());
-        }
-        return  sum;
+        return sum;
     }
 }
