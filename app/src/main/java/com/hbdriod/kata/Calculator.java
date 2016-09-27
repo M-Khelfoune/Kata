@@ -18,6 +18,11 @@ public class Calculator {
             return sum;
         }
         StringTokenizer st = new StringTokenizer(numbers, ",");
+        if (st.countTokens()==2) {
+            sum = Integer.valueOf(st.nextElement().toString());
+            sum += Integer.valueOf(st.nextElement().toString());
+            return sum;
+        }
         while (st.hasMoreElements()) {
           sum += Integer.valueOf(st.nextElement().toString());
         }
