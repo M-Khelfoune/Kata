@@ -11,8 +11,10 @@ public class Calculator {
         if (numbers.length()==0){
             return 0;
         }
-        Integer.parseInt(numbers);
-        
+        if (numbers.indexOf(',')<0){
+            sum = Integer.valueOf(numbers);
+
+        }
         return  sum;
     }
 }

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String string = editText.getText().toString();
+                String string = new String(editText.getText().toString());
                 textView.setText(calculator.add(string));
             }
         });

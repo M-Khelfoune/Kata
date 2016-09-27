@@ -11,6 +11,7 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
         Calculator calculator = new Calculator();
-        assertEquals(0, calculator.add(""));
+        //assertEquals(0, calculator.add(""));
+        assertEquals(13, calculator.add("13"));
     }
 }
