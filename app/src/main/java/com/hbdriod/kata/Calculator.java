@@ -5,4 +5,14 @@ package com.hbdriod.kata;
  */
 
 public class Calculator {
+
+    public int add(String numbers){
+        int sum = 0;
+        if (numbers.length()==0){
+            return 0;
+        }
+        Integer.parseInt(numbers);
+        
+        return  sum;
+    }
 }
