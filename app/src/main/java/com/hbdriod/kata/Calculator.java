@@ -1,5 +1,7 @@
 package com.hbdriod.kata;
 
+import java.util.StringTokenizer;
+
 /**
  * Created by Human Booster on 27/09/2016.
  */
@@ -13,7 +15,11 @@ public class Calculator {
         }
         if (numbers.indexOf(',')<0){
             sum = Integer.valueOf(numbers);
-
+            return sum;
+        }
+        StringTokenizer st = new StringTokenizer(numbers, ",");
+        while (st.hasMoreElements()) {
+          sum += Integer.valueOf(st.nextElement().toString());
         }
         return  sum;
     }
